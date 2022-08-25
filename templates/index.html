@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <title>Smart OCR Application</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+  <body>
+	<h1 align="center" class="a"> Smart OCR Application For Document Digitization</h1>
+			<div> 
+			<h2>Smart OCR:</h2>
+                  <p>
+                     Optical character recognition or optical character reader is the electronic or mechanical conversion of images of typed, handwritten or 
+					 printed text into machine-encoded text, whether from a scanned document, a photo of a document, a scene-photo or from subtitle text superimposed on an image.
+				 </p> 
+				 <img src="https://icon-library.com/images/ocr-icon/ocr-icon-18.jpg" style="width:280px;height:270px;margin-right:-330px;margin-left:100px;float:left" alt="Gesture">
+				 </div>
+    <div class='text-center'><br><br>
+        <h1 style='margin-bottom: 50px;'> Upload PDF Below </h1>
+
+        <form action="{{ url_for('upload')}}" method="post" enctype='multipart/form-data'>
+            <input type='file' name='filename'><br><br>
+            <input type='submit' value='Upload'>
+        </form>
+    </div>
+
+  </body>
+
+  <style>
+	.a{
+	background-color:black;
+	color:white;
+	}
+     
+  </style>
+
+</html>
