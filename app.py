@@ -11,7 +11,7 @@ import sys
 import img2pdf
 from pdf2image import convert_from_path
 import os 
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = r'E:\Tesseract-OCR\tesseract.exe'
 import os.path
 import glob
 import random
@@ -45,7 +45,7 @@ def upload():
              pages = convert_from_path(PDF_file)
              image_counter = 1
              for page in pages:
-                 filename = "page_"+str(image_counter)+".jpg"
+                 filename = r"images/page_"+str(image_counter)+".jpg"
                  page.save(filename, 'JPEG')
                  image_counter = image_counter + 1
              filelimit = image_counter-1
@@ -54,7 +54,7 @@ def upload():
              file_path2 = os.path.join( basepath, 'outputs', "output"+str(random.randint(1, 100000))+".txt")
              f = open(file_path2, "a") 
              for i in range(1, filelimit + 1):
-                 filename = "page_"+str(i)+".jpg"
+                 filename = r"images/page_"+str(i)+".jpg"
                  text = str(pytesseract.image_to_string(Image.open(filename)))
                  text = text.replace('-\n', '')
                  f.write(text)
